@@ -1,0 +1,37 @@
+<header class="header"
+    [ngClass]="{'rtl-dir': translate.currentLang == 'ar', 'text-right': translate.currentLang == 'ar'}">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2 header__logo">{{"LOGO" | translate | titlecase}}</div>
+            <div class="col-7 header__date"
+                [ngClass]="{'text-left': translate.currentLang == 'en', 'ltr-dir':translate.currentLang == 'ar'}">{{date
+                | date: 'd
+                MMM y'}}</div>
+            <div class="col-3 header__user-details">
+                <div ngbDropdown class="d-inline-block">
+                    <h4 class="header__user-details__username" id="dropdownBasic1" ngbDropdownToggle>Ahmed Mohamed Adel
+                    </h4>
+                    <img class="header__user-logo" width="33px" src="../../assets/images/admin.jpg">
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <a ngbDropdownItem *ngIf="translate.currentLang == 'en'" (click)="onChangeLang('ar')">{{"ARBIC"
+                            | translate | titlecase}}</a>
+                        <a ngbDropdownItem *ngIf="translate.currentLang == 'ar'"
+                            (click)="onChangeLang('en')">{{"ENGLISH" | translate | titlecase}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside class="sidebar text-left" [ngClass]="{'right-sidebar': translate.currentLang == 'ar'}">
+    <div class="sidebar__title">
+        <p>{{"NAVIGATION_MODEL" | translate | titlecase}}</p>
+    </div>
+    <ul class="sidebar__sidenav list-unstyled">
+        <li><a [routerLink]="['/']">{{"DASHBAORD" | translate | titlecase}}</a></li>
+        <li><a [routerLink]="['/employee']">{{"ADD_EMPLOYEE" | translate | titlecase}}</a></li>
+        <li><a [routerLink]="['/contact-us']">{{"CONTACT_US" | translate | titlecase}}</a></li>
+    </ul>
+
+</aside>

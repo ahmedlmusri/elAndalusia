@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ahmedEhabTask"
+    }
+  },
+  "defaultProject": "ahmedEhabTask",
+  "cli": {
+    "analytics": false
+  }
 }

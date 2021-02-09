@@ -1,0 +1,26 @@
+{
+    "MALE": "male",
+    "ARBIC": "arbic",
+    "ENGLISH": "english",
+    "FEMALE": "female",
+    "GENDER": "gender",
+    "ADD": "add",
+    "SUCCESS": "success",
+    "NAME": "name",
+    "MESSAGE_MISSING_REQUIRED": "missing required inputs",
+    "DEPARTMENT": "department",
+    "SEARCH_EMPLOYEE": "Search Employee",
+    "ADD_EMPLOYEE": "add Employee",
+    "SEARCH": "search",
+    "EMPLOYEE_NAME":"Employee Name",
+    "EMPLOYEE_CODE":"Employee code",
+    "DATE": "date",
+    "NO_DATA_TO_BE_DISPLAYED": "No Data To Be Displayed",
+    "LOGO": "logo",
+    "CONTACT_US": "contact us",
+    "DASHBAORD": "dashboard",
+    "NAVIGATION_MODEL" : "navigation model"
+
+
+
+}

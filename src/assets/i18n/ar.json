@@ -1,0 +1,38 @@
+{
+    "MALE": "رجل",
+    "FEMALE": "امراة",
+    "ARBIC": "العربية",
+    "ENGLISH": "الأنجليزية",
+    "GENDER": "النوع",
+    "ADD": "اضافة",
+    "SUCCESS": "نجاح",
+    "NAME": "الاسم",
+    "MESSAGE_MISSING_REQUIRED": "بيانات مطلوبة",
+    "DEPARTMENT": "قسم",
+    "SEARCH_EMPLOYEE": "ابحث عن موظف",
+    "ADD_EMPLOYEE": "اضافة موظف",
+    "SEARCH": "بحث",
+    "EMPLOYEE_NAME":"اسم الموظف",
+    "EMPLOYEE_CODE":"كود الموظف",
+    "DATE": "التاريخ",
+    "NO_DATA_TO_BE_DISPLAYED": "لا توجد بيانات ليتم عرضها",
+    "LOGO": "اللوجو",
+    "CONTACT_US": "تواصل معانا",
+    "DASHBAORD": "الرئيسية",
+    "NAVIGATION_MODEL" : "نموذج الملاحة"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

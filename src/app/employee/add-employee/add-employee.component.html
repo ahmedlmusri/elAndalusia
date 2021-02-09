@@ -1,0 +1,129 @@
+<div [ngClass]="{'rtl-dir': translate.currentLang == 'ar', 'text-right': translate.currentLang == 'ar'}">
+    <div class="employee__navigation">
+        <div>
+            <div class="row">
+                <ul class="list-unstyled">
+                    <li class="active"><a [routerLink]="['/employee']">{{"ADD_EMPLOYEE" | translate | titlecase}}</a>
+                    </li>
+                    <li><a [routerLink]="['/employee/searchEmployee']">{{"SEARCH_EMPLOYEE" | translate | titlecase}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <form #addEmployee="ngForm" class="m-t-30" (ngSubmit)="submitData(addEmployee)" class="addEmployee">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group m-t-40 row">
+                    <label class="col-12 col-form-label">
+                        {{"NAME" | translate | titlecase}}
+                        <span class="text-danger"> *</span>
+                    </label>
+
+                    <div class="col-12">
+                        <input type="text" class="form-control" name="name" [(ngModel)]="dataObj.name" #name="ngModel"
+                            required>
+                        <small *ngIf="!name.valid && name.touched" class="text-danger">
+                            {{ "MESSAGE_MISSING_REQUIRED" | translate | titlecase}}
+                        </small>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group m-t-40 row">
+                    <label class="col-12 col-form-label">
+                        {{"DEPARTMENT" | translate | titlecase}}
+                        <span class="text-danger"> *</span>
+                    </label>
+
+                    <div class="col-12">
+                        <select class="form-control" name="department" [(ngModel)]="dataObj.department"
+                            #department="ngModel" required>
+                            <option value="Department1" selected>Department 1</option>
+                            <option value="Department2">Department 2</option>
+                            <option value="Department3">Department 3</option>
+                            <option value="Department4">Department 4</option>
+
+                        </select>
+                        <small *ngIf="!department.valid && department.touched" class="text-danger">
+                            {{ "MESSAGE_MISSING_REQUIRED" | translate | titlecase}}
+                        </small>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group m-t-40 row">
+                    <label class="col-12 col-form-label">
+                        Employee Code
+                        <span class="text-danger"> *</span>
+                    </label>
+
+                    <div class="col-12">
+                        <input type="text" class="form-control" name="code" [(ngModel)]="dataObj.code" #code="ngModel"
+                            required>
+                        <small *ngIf="!code.valid && code.touched" class="text-danger">
+                            {{ "MESSAGE_MISSING_REQUIRED" | translate | titlecase}}
+                        </small>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group m-t-40 row">
+                    <label class="col-12 col-form-label">
+                        BirthDay
+                        <span class="text-danger"> *</span>
+                    </label>
+
+                    <div class="col-12">
+                        <input type="date" class="form-control" name="date" [(ngModel)]="dataObj.date" #date="ngModel"
+                            required>
+                        <small *ngIf="!date.valid && date.touched" class="text-danger">
+                            {{ "MESSAGE_MISSING_REQUIRED" | translate | titlecase}}
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10">
+                <div class="form-group m-t-40 row">
+                    <label class="col-2 col-form-label">
+                        {{"GENDER" | translate | titlecase}}
+                    </label>
+
+                    <div class="col-9">
+                        <div class="row">
+                            <div class="col-3">
+                                <input type="radio" class="radio__label" name="gender" value="male"
+                                    [(ngModel)]="dataObj.gender">
+                                <label>{{"MALE" | translate | titlecase}}</label>
+                            </div>
+                            <div class="col-3">
+                                <input type="radio" name="gender" value="female" [(ngModel)]="dataObj.gender">
+                                <label class="radio__label">{{"FEMALE" | translate | titlecase}}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-success" [disabled]="addEmployee.invalid">{{"ADD" | translate |
+                    titlecase}}</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="successMessage" *ngIf="showOverlay">
+        <div class="successMessage__title">
+            {{"SUCCESS" | translate | titlecase}}
+        </div>
+    </div>
+</div>
