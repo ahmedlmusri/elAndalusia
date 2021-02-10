@@ -8,31 +8,31 @@ import { TanslationService } from 'src/app/services/tanslation.service';
   selector: 'app-add-employee',
   templateUrl: './add-employee.component.html',
   styleUrls: ['./add-employee.component.scss']
-  
+
 })
 export class AddEmployeeComponent implements OnInit {
-  dataObj:any = {
+  dataObj: any = {
     name: null,
     date: null,
-    code:null,
+    code: null,
     department: null,
     gender: null,
   }
-  showOverlay:boolean = false;
+  showOverlay: boolean = false;
   state = "normal";
   constructor(private employeService: EmployeeService,
     public translate: TanslationService,
-    ) { }
+  ) { }
 
   ngOnInit(): void {
-   
+
   }
 
-  submitData(form: NgForm){
+  submitData(form: NgForm) {
     this.employeService.addEmployee(this.dataObj);
     this.showOverlay = true;
-    setTimeout(()=>{
+    setTimeout(() => {
       this.showOverlay = false;
-    },1000)
+    }, 1000)
   }
 }

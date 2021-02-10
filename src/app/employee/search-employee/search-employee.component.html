@@ -1,87 +1,90 @@
 <div class="employee__navigation">
-    <div >
-        <div class="row">
-            <ul class="list-unstyled">
-                <li><a [routerLink]="['/employee']">Add Employee</a></li>
-                <li class="active"><a [routerLink]="['/employee/searchEmployee']">Search Employee</a></li>
-            </ul>
-        </div>
+  <div>
+    <div class="row">
+      <ul class="list-unstyled">
+        <li><a [routerLink]="['/employee']">Add Employee</a></li>
+        <li class="active"><a [routerLink]="['/employee/searchEmployee']">Search Employee</a></li>
+      </ul>
     </div>
+  </div>
 </div>
 
 <div class="all__employee">
-  <form class="all__employee--search__employe"  #searchEmploye="ngForm" (ngSubmit)="submitData(searchEmploye)">
+  <form class="all__employee--search__employe" #searchEmploye="ngForm" (ngSubmit)="submitData(searchEmploye)">
     <div class="row">
       <div class="col-6">
-          <div class="form-group m-t-40 row">
-              <label  class="col-12 col-form-label">
-                {{"NAME" | translate | titlecase}}
-                <span class="text-danger"> *</span>
-              </label>
-      
-              <div class="col-12">
-                  <input type="text" class="form-control" name="name" ngModel #name="ngModel" required>
-                  <small *ngIf="!name.valid && name.touched" class="text-danger">
-                    {{ "MESSAGE_MISSING_REQUIRED" | translate | titlecase}}
-                  </small>
-              </div>
-      
+        <div class="form-group m-t-40 row">
+          <label class="col-12 col-form-label">
+            {{"NAME" | translate | titlecase}}
+            <span class="text-danger"> *</span>
+          </label>
+
+          <div class="col-12">
+            <input type="text" class="form-control" name="name" ngModel #name="ngModel" required>
+            <small *ngIf="!name.valid && name.touched" class="text-danger">
+              {{ "MESSAGE_MISSING_REQUIRED" | translate | titlecase}}
+            </small>
           </div>
+
+        </div>
       </div>
       <div class="col-6">
-          <div class="form-group m-t-40 row">
-              <label  class="col-12 col-form-label">
-                {{"DEPARTMENT" | translate | titlecase}}
-                <span class="text-danger"> *</span>
-              </label>
-      
-              <div class="col-12">
-                  <select  class="form-control" name="department" ngModel #department="ngModel" required>
-                      <option value="Department1" selected>Department 1</option>
-                      <option value="Department2">Department 2</option>
-                      <option value="Department3">Department 3</option>
-                      <option value="Department4">Department 4</option>
+        <div class="form-group m-t-40 row">
+          <label class="col-12 col-form-label">
+            {{"DEPARTMENT" | translate | titlecase}}
+            <span class="text-danger"> *</span>
+          </label>
 
-                  </select>
-                  <small *ngIf="!department.valid && department.touched" class="text-danger">
-                    {{ "MESSAGE_MISSING_REQUIRED" | translate | titlecase}}
-                  </small>
-              </div>
-      
+          <div class="col-12">
+            <select class="form-control" name="department" ngModel #department="ngModel" required>
+              <option value="Department1" selected>Department 1</option>
+              <option value="Department2">Department 2</option>
+              <option value="Department3">Department 3</option>
+              <option value="Department4">Department 4</option>
+
+            </select>
+            <small *ngIf="!department.valid && department.touched" class="text-danger">
+              {{ "MESSAGE_MISSING_REQUIRED" | translate | titlecase}}
+            </small>
           </div>
+
+        </div>
       </div>
-  </div>
-  
-  <div class="form-group">
-    <button class="btn btn-success" [disabled]="searchEmploye.invalid">{{"SEARCH" | translate | titlecase}}</button>
-  </div>
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-success" type="submit" [disabled]="searchEmploye.invalid">{{"SEARCH" | translate |
+        titlecase}}</button>
+      <button class="btn btn-danger" type="button" (click)="resetForm()">{{"reset" | translate | titlecase}}</button>
+
+    </div>
   </form>
-    <table class="table tabled-border">
-        <thead class="thead-light">
-          <tr>
-            <th scope="col"> <input type="checkbox" (change)="selectAll()"></th>
-            <th scope="col">{{"EMPLOYEE_NAME" | translate | titlecase}}</th>
-            <th scope="col">{{"EMPLOYEE_CODE" | translate | titlecase}}</th>
-            <th scope="col">{{"DATE" | translate | titlecase}}</th>
-            <th scope="col">{{"DEPARTMENT" | translate | titlecase}}</th>
-            <th scope="col">{{"GENDER" | translate | titlecase}}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let employee of employees; let i = index">
-            <th scope="row"><input type="checkbox" name="checkbox{{i}}" [checked]="employee?.Selected"></th>
-            <td>{{employee.name}}</td>
-            <td>{{employee.code}}</td>
-            <td>{{employee.date}}</td>
-            <td>{{employee.department}}</td>
-            <td>{{employee.gender}}</td>
-          </tr>
-          <tr *ngIf="!(employees.length > 0)">
-            <td class="text-center bg-white" colspan="6">
-              {{"NO_DATA_TO_BE_DISPLAYED" | translate | titlecase}}
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      
+  <table class="table tabled-border">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col"> <input type="checkbox" (change)="selectAll()"></th>
+        <th scope="col">{{"EMPLOYEE_NAME" | translate | titlecase}}</th>
+        <th scope="col">{{"EMPLOYEE_CODE" | translate | titlecase}}</th>
+        <th scope="col">{{"DATE" | translate | titlecase}}</th>
+        <th scope="col">{{"DEPARTMENT" | translate | titlecase}}</th>
+        <th scope="col">{{"GENDER" | translate | titlecase}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees; let i = index">
+        <th scope="row"><input type="checkbox" name="checkbox{{i}}" [checked]="employee?.Selected"></th>
+        <td>{{employee.name}}</td>
+        <td>{{employee.code}}</td>
+        <td>{{employee.date}}</td>
+        <td>{{employee.department}}</td>
+        <td>{{employee.gender}}</td>
+      </tr>
+      <tr *ngIf="!employees.length">
+        <td class="text-center bg-white" colspan="6">
+          {{"NO_DATA_TO_BE_DISPLAYED" | translate | titlecase}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
 </div>

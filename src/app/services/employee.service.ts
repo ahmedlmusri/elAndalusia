@@ -5,19 +5,16 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class EmployeeService {
-  Employes:any = [];
-  resetFilter = new Subject();
+  Employes: any[] = [];
   constructor() { }
 
-  addEmployee(data: object){
-   this.Employes = JSON.parse(localStorage.getItem('employess'))
+  addEmployee(data: object) {
+    this.Employes = JSON.parse(localStorage.getItem('employess'));
     this.Employes.push(data);
-    localStorage.setItem('employess',JSON.stringify(this.Employes));
-    console.log(this.Employes)
-
+    localStorage.setItem('employess', JSON.stringify(this.Employes));
   }
 
-  getData(){
-    return localStorage.getItem('employess');
+  getData() {
+    return JSON.parse(localStorage.getItem('employess'));
   }
 }

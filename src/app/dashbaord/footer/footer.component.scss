@@ -1,4 +1,9 @@
-// .footer{
-//     position: relative;
-//     bottom: 0px;
-// }
+.footer{
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    }
+

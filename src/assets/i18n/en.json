@@ -12,15 +12,13 @@
     "SEARCH_EMPLOYEE": "Search Employee",
     "ADD_EMPLOYEE": "add Employee",
     "SEARCH": "search",
-    "EMPLOYEE_NAME":"Employee Name",
-    "EMPLOYEE_CODE":"Employee code",
+    "EMPLOYEE_NAME": "Employee Name",
+    "EMPLOYEE_CODE": "Employee code",
+    "BIRTH_DATE": "birth date",
     "DATE": "date",
     "NO_DATA_TO_BE_DISPLAYED": "No Data To Be Displayed",
     "LOGO": "logo",
     "CONTACT_US": "contact us",
     "DASHBAORD": "dashboard",
-    "NAVIGATION_MODEL" : "navigation model"
-
-
-
+    "NAVIGATION_MODEL": "navigation model"
 }

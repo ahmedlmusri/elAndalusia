@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   }
 
 
-  onChangeLang(lang){
+  onChangeLang(lang) {
     this.translate.useLanguage(lang);
   }
 }

@@ -2,7 +2,14 @@
     border: 1px solid #eee;
     .all__employee--search__employe{
         padding: 20px;
+        
     }
+    table thead.thead-light tr th {
+        border-color: #4088d8!important;
+        color: #fff;
+        background: #4088d8!important;
+    }
+    
     button{
         margin: 0px 10px;
     }
